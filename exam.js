@@ -278,18 +278,18 @@
 // let result = num.split("").reduce((sum,item)=>sum+(isNaN(Number(item))?0:Number(item)),0)
 // console.log(result);
 
-// let str = "aabbcfffde"
-// function f(st) {
-//     let map = new Map()
-//     for (const str of st) {
-//         map.set(str,(map.get(str) || 0) + 1 )
-//     }
-//    let sorted = [...map.entries()].sort((a, b) => b[1] - a[1]);
+let str = "aabbcfffde"
+function f(st) {
+    let map = new Map()
+    for (const str of st) {
+        map.set(str,(map.get(str) || 0) + 1 )
+    }
+   let sorted = [...map.entries()].sort((a, b) => b[1] - a[1]);
 
   
-//   return sorted.map(([k, v]) => k);
-// }
-// console.log(f(str));
+  return sorted.map(([k, v]) => k);
+}
+console.log(f(str));
 
 
 // let ob =[{
@@ -345,14 +345,14 @@
 //    let r = Object.values(ob).reduce((sum,item)=>sum+item.budget,0)
 // console.log(r);
 
-let arr = [2, 7, 3, 9, 6, 1, 6, 3]
+// let arr = [2, 7, 3, 9, 6, 1, 6, 3]
 
-function f(a){
-	for (let i = 0; i < arr.length; i++) {
-		if(i%2===0 && arr[i]%2 !==0) return false
-		if(i%2==1 && arr[i]%2 !==1) return false	
-	}
-	return true
-}
+// function f(a){
+// 	for (let i = 0; i < arr.length; i++) {
+// 		if(i%2===0 && arr[i]%2 !==0) return false
+// 		if(i%2==1 && arr[i]%2 !==1) return false	
+// 	}
+// 	return true
+// }
 
-console.log(f(arr))
+// console.log(f(arr))
