@@ -278,18 +278,18 @@
 // let result = num.split("").reduce((sum,item)=>sum+(isNaN(Number(item))?0:Number(item)),0)
 // console.log(result);
 
-let str = "aabbcfffde"
-function f(st) {
-    let map = new Map()
-    for (const str of st) {
-        map.set(str,(map.get(str) || 0) + 1 )
-    }
-   let sorted = [...map.entries()].sort((a, b) => b[1] - a[1]);
+// let str = "aabbcfffde"
+// function f(st) {
+//     let map = new Map()
+//     for (const str of st) {
+//         map.set(str,(map.get(str) || 0) + 1 )
+//     }
+//    let sorted = [...map.entries()].sort((a, b) => b[1] - a[1]);
 
   
-  return sorted.map(([k, v]) => k);
-}
-console.log(f(str));
+//   return sorted.map(([k, v]) => k);
+// }
+// console.log(f(str));
 
 
 // let ob =[{
@@ -356,3 +356,182 @@ console.log(f(str));
 // }
 
 // console.log(f(arr))
+
+// function sums() {
+//     let arr = [1,2,3,4,5,6,7,8,9,10]
+//     return arr.reduce((sum, item) => sum + item, 0)
+// }
+
+// function even_sum() {
+//     let arr = [1,2,3,4,5,6,7,8,9,10]
+//     return arr
+//         .filter(item => item % 2 === 0)
+//         .reduce((sum, item) => sum + item, 0)
+// }
+
+// function odd_sum() {
+//     let arr = [1,2,3,4,5,6,7,8,9,10]
+//     return arr
+//         .filter(item => item % 2 !== 0)
+//         .reduce((sum, item) => sum + item, 0)
+// }
+
+// function random_num() {
+//     return Math.floor(Math.random() * 100)  // 0–99
+// }
+
+// async function final() {
+//     try {
+//         let sum = sums()
+//         console.log("the sum is : " + sum)
+
+//         let even = even_sum()
+//         console.log("the even sum is : " + even)
+
+//         let odd = odd_sum()
+//         console.log("the odd sum is : " + odd)
+
+//         let random = random_num()
+//         console.log("the random number is : " + random)
+
+//     } catch (error) {
+//         console.log(error.message)
+//     }
+// }
+
+// final()
+
+
+
+
+
+// function sums() {
+//     return new Promise((resolve) => {
+//         let arr = [1,2,3,4,5,6,7,8,9,10]
+//         let result = arr.reduce((sum, item) => sum + item, 0)
+//         resolve(result)
+//     })
+// }
+
+// function even_sum() {
+//     return new Promise((resolve) => {
+//         let arr = [1,2,3,4,5,6,7,8,9,10]
+//         let result = arr.filter(item => item % 2 === 0)
+//                         .reduce((sum, item) => sum + item, 0)
+//         resolve(result)
+//     })
+// }
+
+// function odd_sum() {
+//     return new Promise((resolve) => {
+//         let arr = [1,2,3,4,5,6,7,8,9,10]
+//         let result = arr.filter(item => item % 2 !== 0)
+//                         .reduce((sum, item) => sum + item, 0)
+//         resolve(result)
+//     })
+// }
+
+// function random_num() {
+//     return new Promise((resolve) => {
+//         let r = Math.floor(Math.random() * 100)
+//         resolve(r)
+//     })
+// }
+
+// async function final() {
+//     try {
+//         let sum = await sums()
+//         console.log("the sum is : " + sum)
+
+//         let even = await even_sum()
+//         console.log("the even sum is : " + even)
+
+//         let odd = await odd_sum()
+//         console.log("the odd sum is : " + odd)
+
+//         let random = await random_num()
+//         console.log("the random number is : " + random)
+
+//     } catch (error) {
+//         console.log(error.message)
+//     }
+// }
+
+// final()
+
+function sums() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            let arr = [1,2,3,4,5,6,7,8,9,10]
+            let result = arr.reduce((sum, item) => sum + item, 0)
+            resolve(result)
+        }, 500) 
+    })
+}
+
+function even_sum() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            let arr = [1,2,3,4,5,6,7,8,9,10]
+            let result = arr.filter(item => item % 2 === 0)
+                            .reduce((sum, item) => sum + item, 0)
+            resolve(result)
+        }, 1000)
+    })
+}
+
+function odd_sum() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            let arr = [1,2,3,4,5,6,7,8,9,10]
+            let result = arr.filter(item => item % 2 !== 0)
+                            .reduce((sum, item) => sum + item, 0)
+            resolve(result)
+        }, 100)
+    })
+}
+
+function random_num() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            let r = Math.floor(Math.random() * 100)
+            resolve(r)
+        }, 2000)
+    })
+}
+function ch_num() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            let str = "abdullah Al mamun 123 @ gmail . com 345 mamun 567 hi hlw 897 ok ? ";
+            let num = str.match(/[0-9]/g);
+            let strings = str.match(/[a-zA-Z]/g).filter(item => item.match(/[aeiouAEIUO]/g))
+            resolve(strings)
+        }, 2500);
+    })
+    
+}
+
+async function final() {
+    try {
+        let sum = await sums()
+        console.log("the sum is : " + sum)
+
+        let even = await even_sum()
+        console.log("the even sum is : " + even)
+
+        let odd = await odd_sum()
+        console.log("the odd sum is : " + odd)
+
+        let random = await random_num()
+        console.log("the random number is : " + random)
+
+        let ch = await ch_num()
+        console.log("the  character  is : " + ch)
+
+    } catch (error) {
+        console.log(error.message)
+    }
+}
+
+final()
+
