@@ -27,7 +27,7 @@
 
  let str = "abdullah Al mamun 123 @ gmail . com 345 mamun 567 hi hlw 897 ok ? ";
             // let num = str.match(/[0-9]/g);
- let strings = str.match(/[a-zA-Z]/g).filter(item => item.match(/[aeiouAEIUO]/g)).join(" ")
+ let strings = str.match(/[a-zA-Z]/g).filter(item => !item.match(/[aeiouAEIUO]/g)).join(" ")
  console.log(strings);
  
 
