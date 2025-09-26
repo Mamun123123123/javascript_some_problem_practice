@@ -75,9 +75,9 @@
 // }, 1000);
 
 let arr = [1,2,3,2,3]
-function f(ar) {
-     return arr.filter(num => arr.indexOf(num) ===arr.lastIndexOf(num))
-    // new Set(nums).size !== nums.length
+function f(arr) {
+     let r = arr.filter(num => arr.indexOf(num) !==arr.lastIndexOf(num)).reduce((sum,num)=> sum+num,0)
+     return  r
 }
 console.log(f(arr));
 
